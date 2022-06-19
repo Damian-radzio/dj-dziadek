@@ -2,10 +2,12 @@
   <div class="wrapper">
     <header class="section-header-text">
       <h2>Cieszę się że tu zajrzałeś.</h2>
-      Oznacza to że rozważasz skontaktowanie się ze mną w sprawie twojego przyjęcia, a ja wychodzę
-      na przeciw aby Ci to ułatwić. Poniżej znajduje się formularz kontaktowy, który odpowiednio
-      wypełniony zostanie do mnie bezpośrednio wysłany, a ja szybko będę mógł na niego odpowiedzieć.
-      Jeśli jednak masz do mnie więcej pytań, skontaktuj się ze mną bezpośrednio.
+      <p>
+        Oznacza to że rozważasz skontaktowanie się ze mną w sprawie twojego przyjęcia, a ja wychodzę
+        na przeciw aby Ci to ułatwić. Poniżej znajduje się formularz kontaktowy, który odpowiednio
+        wypełniony zostanie do mnie bezpośrednio wysłany, a ja szybko będę mógł na niego
+        odpowiedzieć. Jeśli jednak masz do mnie więcej pytań, skontaktuj się ze mną bezpośrednio.
+      </p>
     </header>
 
     <section class="contact-form-wrapper">
@@ -33,13 +35,13 @@
         <input name="numer_tel" class="input" type="text" placeholder="Telefon *" required />
         <input name="lokalizacja_imprezy" class="input" type="text" placeholder="Miejscowość" />
         <input name="termin-imprezy" class="input" type="date" placeholder="Termin" />
-        <input name="wiadomosc" class="message input" type="text" placeholder="Wiadomość" />
         <input
-          name="skad_polecenie"
-          class="input"
+          name="wiadomosc"
+          class="message input"
           type="text"
-          placeholder="Skąd się o mnie dowiedziałeś"
+          placeholder="Wiadomość (opcjonalnie)"
         />
+
         <input class="submit" type="submit" value="Wyślij" />
       </form>
       <router-view />
@@ -50,6 +52,11 @@
 .wrapper {
   max-width: 1640px;
   margin: 0 auto;
+}
+header {
+  p {
+    line-height: 33px;
+  }
 }
 .section-header-text {
   h2 {
@@ -75,24 +82,23 @@
     display: flex;
     flex-direction: column;
     width: 40%;
-    height: 700px;
-    justify-content: space-between;
+    margin-bottom: 48px;
     align-items: center;
     .message {
       resize: none;
       align-items: center;
-      padding: 30px;
     }
     .input {
       min-width: 300px;
       width: 100%;
       outline: none;
-
+      margin-bottom: 64px;
       border-style: none;
-      height: 95px;
-      border-bottom: 1px solid black;
+      min-height: 40px;
+      background-color: #e5e5e5;
+      border-radius: 29px;
       transition: 0.4s;
-      padding: 0px 10px;
+      padding: 0px 30px;
       font-weight: bolder;
       color: #1d1d1d;
       &::placeholder {
@@ -106,7 +112,7 @@
       color: white;
       letter-spacing: 1.3px;
       align-self: flex-end;
-      margin-top: 80px;
+      margin-top: 30px;
       padding: 10px 40px;
       border-radius: 25px;
       cursor: pointer;

@@ -17,13 +17,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 350px;
   border-radius: 25px;
+  width: 817px;
+  height: 455px;
   background-color: rgba(0, 0, 0, 0.86);
+
   h2 {
     text-align: center;
     font-size: 38px;

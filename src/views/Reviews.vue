@@ -28,9 +28,6 @@ export default {
     const googleReviews = document.createElement('script');
     googleReviews.setAttribute('src', 'https://apps.elfsight.com/p/platform.js');
     document.head.appendChild(googleReviews);
-    if (googleReviews.attributes.src !== '') {
-      console.log('now');
-    }
   },
 
   methods: {

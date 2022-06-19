@@ -1,15 +1,14 @@
 <template>
   <ul class="images-wrapper">
-    <li class="image-wrapper" v-for="image in images" v-bind:key="image">
-      <img
-        class="img"
-        :src="image.responsiveImage.src"
-        aspect-ratio="1 "
-        alt="img"
-        lazy="true"
-        async
-      />
-    </li>
+    <a
+      class="image-wrapper"
+      v-for="image in images"
+      v-bind:key="image"
+      :href="image.responsiveImage.src"
+      data-lightbox="roadtrip"
+    >
+      <img class="img" :src="image.responsiveImage.src" aspect-ratio="1 " alt="img" lazy="true" />
+    </a>
   </ul>
 </template>
 <style lang="scss">
@@ -38,6 +37,11 @@ export default {
     return {
       images: [],
     };
+  },
+  mounted() {
+    const lightbox = document.createElement('script');
+    lightbox.setAttribute('src', 'lightbox/lightbox-plus-jquery.min.js');
+    document.head.appendChild(lightbox);
   },
   methods: {
     getPhotos() {

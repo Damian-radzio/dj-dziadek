@@ -13,6 +13,7 @@ export default {
 
 <style lang="scss">
 .home {
+  position: relative;
   .h1 {
     position: absolute;
     bottom: 100px;
