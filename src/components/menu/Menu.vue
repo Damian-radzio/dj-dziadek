@@ -26,7 +26,7 @@
     margin-left: 100px;
   }
   nav {
-    margin-right: 100px;
+    margin-right: 120px;
     width: 50%;
     min-width: 700px;
     ul {

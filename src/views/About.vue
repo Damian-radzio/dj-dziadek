@@ -4,34 +4,30 @@
       <div class="text">
         <h2>Cześć, jestem Sławek!</h2>
         <p>
-          lorem ipsum dolor sit amet, consectetur lorem ipsum dolor sit amet, consectetur lorem
-          ipsum dolor sit amet, consectetur lorem ipsum dolor sit amet, consectetur lorem ipsum
-          dolor sit amet, consectetur lorem ipsum dolor sit amet, consectetur lorem ipsum dolor sit
-          amet, consectetur lorem ipsum dolor sit amet, consectetur.
+          Od lat dokładam wszelkich starań, by każda poprowadzona przeze mnie impreza stała się
+          najlepszym wspomnieniem moich klientów. Konsola od zawsze była moim hobby, dlatego mimo
+          pracy na etacie postanowiłem podążać za marzeniami i spełniać się w tym co kocham. Tym
+          sposobem, jestem częścią tej branży od 8 lat i nie zamierzam zwalniać a przeciwnie,
+          dopiero nabieram rozpędu.
         </p>
       </div>
-      <img src="../assets/img/slawek.jpeg" alt="Zdięcie wodzireja" />
+      <div class="about-me-image"></div>
     </section>
     <section class="announcers-wrapper">
       <h2>Imprezę obsługuje Dj Dziadek i jego konferansjer.</h2>
       <div class="announcers">
         <div>
           <div class="img-wrapper">
-            <img src="../assets/img/DamianR.jpeg" alt="zdięcie konferansjera" />
+            <img src="../assets/img/SlawekD.png" alt="Zdięcia wodzireja" />
+            <p class="name">Wodzirej<span>Sławomir Dziadek</span></p>
           </div>
-          <p>Konferansjer<span>Damian Radecki</span></p>
         </div>
-        <div class="middle">
-          <div class="img-wrapper">
-            <img src="../assets/img/SlawekD.jpeg" alt="Zdięcia wodzireja" />
-          </div>
-          <p>Wodzirej<span>Sławomir Dziadek</span></p>
-        </div>
+
         <div>
           <div class="img-wrapper">
-            <img src="../assets/img/SzymonG.jpeg" alt="zdięcie konferansjera" />
+            <img src="../assets/img/DamianR.png" alt="zdięcie konferansjera" />
+            <p class="name">Konferansjer<span>Damian Radecki</span></p>
           </div>
-          <p>Konferansjer<span>Szymon Gatner</span></p>
         </div>
       </div>
     </section>
@@ -40,17 +36,16 @@
       <div class="announcers coworkers">
         <div>
           <div class="img-wrapper">
-            <img src="../assets/img/MartynaS.jpeg" alt="zdięcie fotografa" />
+            <img src="../assets/img/MartynaS.png" alt="zdięcie fotografa" />
+            <p class="name">Fotograf<span>Martyna Skrond</span></p>
           </div>
-          <p>Fotograf<span>Martyna Skrond</span></p>
         </div>
 
         <div>
           <div class="img-wrapper">
-            <img src="../assets/img/MartynaS.jpeg" alt="zdięcie skrzypaczki" />
+            <img src="../assets/img/MarlenaK.png" alt="zdięcie skrzypaczki" />
+            <p class="name">Skrzypaczka<span>Marlena Król</span></p>
           </div>
-
-          <p>Skrzypaczka<span>Anna Nowak</span></p>
         </div>
       </div>
     </section>
@@ -61,14 +56,30 @@
 .about {
   margin-top: 60px;
   .about-general {
+    margin-top: 150px;
     display: flex;
     justify-content: space-around;
+    .about-me-image {
+      width: 511px;
+      height: 700px;
+      background-image: url('../assets/img/slawek.jpeg');
+      overflow: hidden;
+      background-image: cover;
+      background-size: 100%;
+    }
     .text {
-      width: 50%;
-      padding-left: 120px;
+      font-family: 'Brygada 1918';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 45px;
+
+      color: #000000;
+
+      width: 26%;
       h2 {
         font-weight: 600;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
         font-size: 28px;
       }
       p {
@@ -84,9 +95,9 @@
   .announcers-wrapper {
     text-align: center;
     width: 100%;
-    margin: 100px auto;
+    margin: 120px auto;
     h2 {
-      margin-bottom: 135px;
+      margin-bottom: 80px;
     }
     .announcers {
       margin: 0 auto;
@@ -95,43 +106,49 @@
       justify-content: space-around;
       align-items: center;
       height: 450px;
-      p {
-        padding-top: 14px;
-        font-weight: 600;
+      .name {
+        width: 100%;
+        color: white;
+        font-weight: 500;
         font-size: 24px;
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translate(-50%);
         span {
           font-size: 20px;
           display: block;
-          padding-top: 16px;
-          font-weight: 300;
+          font-weight: 400;
         }
       }
-      .middle {
-        align-self: flex-start;
-      }
+
       .img-wrapper {
         margin: 0 30px;
-        width: 260px;
-        height: 260px;
+        width: 303px;
+        height: 303px;
         border-radius: 50%;
         overflow: hidden;
-        background-color: grey;
+        background-color: #1d1d1d30;
+        position: relative;
         img {
+          position: absolute;
+          z-index: -1;
+          left: 0;
           width: 100%;
         }
       }
     }
   }
   .coworkers-wrapper {
-    margin: 50px auto;
     h2 {
-      margin-bottom: 30px;
+      margin-bottom: 80px;
     }
     .coworkers {
       .img-wrapper {
+        background-color: #1d1d1d40;
+
         img {
-          width: 130%;
-          transform: translate(-40px, -20px); 
+          width: 100%;
         }
       }
     }
