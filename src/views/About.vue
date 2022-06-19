@@ -54,6 +54,8 @@
 
 <style lang="scss">
 .about {
+  max-width: 1640px;
+  margin: 0 auto;
   margin-top: 60px;
   .about-general {
     margin-top: 150px;

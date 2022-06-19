@@ -1,50 +1,56 @@
 <template>
-  <header class="section-header-text">
-    <h2>Cieszę się że tu zajrzałeś.</h2>
-    Oznacza to że rozważasz skontaktowanie się ze mną w sprawie twojego przyjęcia, a ja wychodzę na
-    przeciw aby Ci to ułatwić. Poniżej znajduje się formularz kontaktowy, który odpowiednio
-    wypełniony zostanie do mnie bezpośrednio wysłany, a ja szybko będę mógł na niego odpowiedzieć.
-    Jeśli jednak masz do mnie więcej pytań, skontaktuj się ze mną bezpośrednio.
-  </header>
+  <div class="wrapper">
+    <header class="section-header-text">
+      <h2>Cieszę się że tu zajrzałeś.</h2>
+      Oznacza to że rozważasz skontaktowanie się ze mną w sprawie twojego przyjęcia, a ja wychodzę
+      na przeciw aby Ci to ułatwić. Poniżej znajduje się formularz kontaktowy, który odpowiednio
+      wypełniony zostanie do mnie bezpośrednio wysłany, a ja szybko będę mógł na niego odpowiedzieć.
+      Jeśli jednak masz do mnie więcej pytań, skontaktuj się ze mną bezpośrednio.
+    </header>
 
-  <section class="contact-form-wrapper">
-    <h2>Formularz kontaktowy</h2>
+    <section class="contact-form-wrapper">
+      <h2>Formularz kontaktowy</h2>
 
-    <form
-      action="https://formsubmit.co/slawekdjdziadek@gmail.com"
-      method="POST"
-      class="contact-form"
-    >
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_next" value="http://localhost:3000/contact/sent" />
-      <input type="hidden" name="_autoresponse" value="Otrzymałem twoją wiadomość, dziękuję!" />
-      <input type="hidden" name="_subject" value="Nowa wiadomość, ze strony djdziadek!" />
-      <input type="hidden" name="_captcha" value="false" />
-      <form action="https://formsubmit.co/email" method="POST" />
-      <input
-        type="text"
-        class="input"
-        name="imie_nazwisko"
-        placeholder="Imię i nazwisko *"
-        required
-      />
-      <input type="email" class="input" name="email" placeholder="Email *" required />
-      <input name="numer_tel" class="input" type="text" placeholder="Telefon *" required />
-      <input name="lokalizacja_imprezy" class="input" type="text" placeholder="Miejscowość" />
-      <input name="termin-imprezy" class="input" type="date" placeholder="Termin" />
-      <input name="wiadomosc" class="message input" type="text" placeholder="Wiadomość" />
-      <input
-        name="skad_polecenie"
-        class="input"
-        type="text"
-        placeholder="Skąd się o mnie dowiedziałeś"
-      />
-      <input class="submit" type="submit" value="Wyślij" />
-    </form>
-    <router-view />
-  </section>
+      <form
+        action="https://formsubmit.co/slawekdjdziadek@gmail.com"
+        method="POST"
+        class="contact-form"
+      >
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="http://localhost:3000/contact/sent" />
+        <input type="hidden" name="_autoresponse" value="Otrzymałem twoją wiadomość, dziękuję!" />
+        <input type="hidden" name="_subject" value="Nowa wiadomość, ze strony djdziadek!" />
+        <input type="hidden" name="_captcha" value="false" />
+        <form action="https://formsubmit.co/email" method="POST" />
+        <input
+          type="text"
+          class="input"
+          name="imie_nazwisko"
+          placeholder="Imię i nazwisko *"
+          required
+        />
+        <input type="email" class="input" name="email" placeholder="Email *" required />
+        <input name="numer_tel" class="input" type="text" placeholder="Telefon *" required />
+        <input name="lokalizacja_imprezy" class="input" type="text" placeholder="Miejscowość" />
+        <input name="termin-imprezy" class="input" type="date" placeholder="Termin" />
+        <input name="wiadomosc" class="message input" type="text" placeholder="Wiadomość" />
+        <input
+          name="skad_polecenie"
+          class="input"
+          type="text"
+          placeholder="Skąd się o mnie dowiedziałeś"
+        />
+        <input class="submit" type="submit" value="Wyślij" />
+      </form>
+      <router-view />
+    </section>
+  </div>
 </template>
 <style lang="scss">
+.wrapper {
+  max-width: 1640px;
+  margin: 0 auto;
+}
 .section-header-text {
   h2 {
     font-weight: 500;
