@@ -52,6 +52,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'About',
+};
+</script>
+
 <style lang="scss">
 .about {
   max-width: 1640px;
@@ -78,7 +84,7 @@
 
       color: #000000;
 
-      width: 26%;
+      width: 40%;
       h2 {
         font-weight: 600;
         margin-bottom: 50px;
@@ -156,9 +162,51 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .about {
+    .about-general {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .text {
+        width: 100%;
+        padding: 24px 48px;
+      }
+    }
+    .announcers-wrapper {
+      .announcers {
+        height: auto;
+        flex-direction: column;
+        .img-wrapper {
+          margin-bottom: 75px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    overflow: hidden;
+    .about-general {
+      .about-me-image {
+        width: 80%;
+        height: 600px;
+      }
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .about {
+    .about-general {
+      .about-me-image {
+        height: 500px;
+        min-width: 400px;
+      }
+    }
+  }
+}
 </style>
-<script>
-export default {
-  name: 'About',
-};
-</script>

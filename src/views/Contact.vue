@@ -18,7 +18,7 @@
         method="POST"
         class="contact-form"
       >
-        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_template" value="table" id="formularz" />
         <input type="hidden" name="_next" value="http://localhost:3000/contact/sent" />
         <input type="hidden" name="_autoresponse" value="Otrzymałem twoją wiadomość, dziękuję!" />
         <input type="hidden" name="_subject" value="Nowa wiadomość, ze strony djdziadek!" />
@@ -45,13 +45,48 @@
         <input class="submit" type="submit" value="Wyślij" />
       </form>
       <router-view />
+      <!-- <div class="contact">
+        <div class="contact-data-container">
+          <h2>Kontakt</h2>
+          <p>(+48) 555 555 555</p>
+          <a href="mailto: slawekdjdziadek@gmail.com">slawekdjdziadek@gmail.com</a>
+        </div>
+        <div class="social-container">
+          <Facebook />
+          <img src="../assets/svg/instagram.png" alt="instagram" />
+        </div>
+      </div> -->
     </section>
   </div>
 </template>
+
+<script>
+import Facebook from '../assets/svg/facebook.svg';
+import Instagram from '../assets/svg/instagram.png';
+export default {
+  name: 'Contact',
+  components: { Facebook, Instagram },
+  data() {
+    return {
+      inputsData: {
+        name: '',
+        email: '',
+        phone: '',
+        location: '',
+        eventDate: '',
+        message: '',
+        reference: '',
+      },
+    };
+  },
+};
+</script>
+
 <style lang="scss">
 .wrapper {
   max-width: 1640px;
   margin: 0 auto;
+  margin-top: 130px;
 }
 header {
   p {
@@ -89,7 +124,7 @@ header {
       align-items: center;
     }
     .input {
-      min-width: 300px;
+      min-width: 280px;
       width: 100%;
       outline: none;
       margin-bottom: 64px;
@@ -122,25 +157,60 @@ header {
       }
     }
   }
+  .contact {
+    text-align: center;
+    position: relative;
+    a {
+      color: black;
+    }
+    .contact-data-container {
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+
+    .social-container {
+      img {
+        width: 20%;
+      }
+    }
+  }
+  text-align: center;
+}
+@media (max-width: 678px) {
+  .section-header-text {
+    padding: 50px;
+  }
+  .contact-form-wrapper {
+    .contact-form {
+      .submit {
+        align-self: center;
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .contact {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    .contact-data-container {
+      width: 100%;
+      padding-left: 0;
+      margin-bottom: 48px;
+      h2 {
+        margin: 0;
+        padding: 24px 0;
+        text-align: center;
+      }
+      p,
+      a {
+        padding: 12px;
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
 }
 </style>
-<script>
-import Vuex from 'vuex';
-
-export default {
-  name: 'Contact',
-  data() {
-    return {
-      inputsData: {
-        name: '',
-        email: '',
-        phone: '',
-        location: '',
-        eventDate: '',
-        message: '',
-        reference: '',
-      },
-    };
-  },
-};
-</script>

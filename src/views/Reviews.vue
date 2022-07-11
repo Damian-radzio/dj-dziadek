@@ -46,6 +46,9 @@ body {
 #reviews-wrapper {
   margin: 100px;
 }
+.vld-parent {
+  margin-top: 200px;
+}
 .loader {
   position: absolute;
   top: 50%;
