@@ -23,6 +23,7 @@
 import axios from 'axios';
 import Facebook from '../assets/svg/facebook-small.svg';
 export default {
+  name: 'Gallery-section',
   components: { Facebook },
   data() {
     return {
@@ -30,9 +31,6 @@ export default {
       showNavbar: true,
       lastScrollPosition: 0,
     };
-  },
-  created() {
-    window.addEventListener('resize', this.onResize);
   },
 
   mounted() {
@@ -77,6 +75,7 @@ export default {
   },
   created() {
     this.getPhotos();
+    window.addEventListener('resize', this.onResize);
   },
 };
 </script>

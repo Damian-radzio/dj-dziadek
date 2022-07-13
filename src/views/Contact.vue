@@ -61,11 +61,11 @@
 </template>
 
 <script>
-import Facebook from '../assets/svg/facebook.svg';
-import Instagram from '../assets/svg/instagram.png';
+// import Facebook from '../assets/svg/facebook.svg';
+// import Instagram from '../assets/svg/instagram.png';
 export default {
-  name: 'Contact',
-  components: { Facebook, Instagram },
+  name: 'Contact-section',
+  // components: { Facebook, Instagram },
   data() {
     return {
       inputsData: {

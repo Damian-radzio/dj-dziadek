@@ -26,7 +26,7 @@
 <script>
 import Facebook from '../../assets/svg/facebook.svg';
 export default {
-  name: 'Menu',
+  name: 'Footer-component',
   components: { Facebook },
   data() {
     return {
@@ -37,11 +37,11 @@ export default {
   created() {
     window.addEventListener('resize', this.onResize);
   },
-  destroyed() {
+  unmounted() {
     window.removeEventListener('resize', this.onResize);
   },
   methods: {
-    onResize(e) {
+    onResize() {
       this.width = window.innerWidth;
       this.height = window.innerHeight;
     },

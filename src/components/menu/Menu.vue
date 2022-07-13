@@ -68,7 +68,7 @@ import DjDziadekIcon from '../../assets/svg/dj-dziadek-logo.svg';
 import HamburgerBtn from '../../assets/svg/hamburger.svg';
 import OpenedHamburgerBtn from '../../assets/svg/opened-menu-hamburger.svg';
 export default {
-  name: 'Menu',
+  name: 'Menu-component',
   components: { DjDziadekIcon, HamburgerBtn, OpenedHamburgerBtn },
   data() {
     return {
@@ -83,14 +83,14 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.onScroll);
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener('scroll', this.onScroll);
   },
-  destroyed() {
+  unmounted() {
     window.removeEventListener('resize', this.onResize);
   },
   methods: {
-    onResize(e) {
+    onResize() {
       this.width = window.innerWidth;
       this.height = window.innerHeight;
     },
