@@ -3,6 +3,7 @@
     <div class="photograph-link" :class="{ hiddenNavbar: !this.showNavbar }">
       <div class="social-container">
         <div class="text"><p>Fotograf</p></div>
+
         <img src="../assets/svg/instagram.png" />
         <Facebook />
       </div>
@@ -94,6 +95,7 @@ export default {
     align-items: center;
     justify-content: flex-end;
     padding: 12px 24px;
+    padding-right: 100px;
     .text {
       background-color: #e5e5e5;
       width: 116px;
@@ -103,7 +105,9 @@ export default {
       border-radius: 18.5px;
       margin-right: 100px;
     }
-
+    svg {
+      margin-left: 26px;
+    }
     img {
       width: 43px;
     }
@@ -116,7 +120,7 @@ export default {
   transition: 0.3s ease-out;
 }
 .images-wrapper {
-  margin-top: 0px;
+  margin-top: 220px;
   display: flex;
   flex-wrap: wrap;
 

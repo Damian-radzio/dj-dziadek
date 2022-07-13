@@ -44,7 +44,7 @@
 
         <input class="submit" type="submit" value="Wyślij" />
       </form>
-      <router-view />
+
       <!-- <div class="contact">
         <div class="contact-data-container">
           <h2>Kontakt</h2>

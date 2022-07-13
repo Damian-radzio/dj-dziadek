@@ -3,7 +3,11 @@
     <Menu />
   </div>
   <div class="children">
-    <router-view />
+    <router-view v-slot="{ Component }">
+      <transition name="route" mode="out-in">
+        <component :is="Component"></component>
+      </transition>
+    </router-view>
   </div>
   <div id="footer">
     <Footer />
@@ -78,5 +82,20 @@ body {
   width: 100%;
   height: 2.5rem;
   z-index: -100;
+}
+
+.route-enter-from {
+  opacity: 0.3;
+  transform: translateY(200px);
+}
+.route-enter-active {
+  transition: all 0.5s ease-out;
+}
+.route-leave-to {
+  opacity: 0;
+  transform: translateY(-200px);
+}
+.route-leave-active {
+  transition: all 0.5s ease-in;
 }
 </style>

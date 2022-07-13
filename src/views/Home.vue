@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: 'Home-section',
 };
 </script>
 
@@ -31,6 +31,7 @@ export default {
     }
   }
   .hero-image {
+    margin-top: 130px;
     background-image: url('../assets/img/HeroImage.png');
     background-size: cover;
 
@@ -39,7 +40,7 @@ export default {
     -moz-box-shadow: inset 0px 14px 24px -6px rgba(0, 0, 0, 0.304);
     box-shadow: inset 0px 14px 24px -6px rgba(0, 0, 0, 0.304);
     width: 100%;
-    height: 95vh;
+    height: 85vh;
   }
 }
 @media (max-width: 968px) {

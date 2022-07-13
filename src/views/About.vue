@@ -1,14 +1,14 @@
 <template>
   <div class="about">
     <section class="about-general">
-      <div class="text">
+      <div class="text" :class="{ active: this.mounted }">
         <h2>Cześć, jestem Sławek!</h2>
         <p>
           Od lat dokładam wszelkich starań, by każda poprowadzona przeze mnie impreza stała się
           najlepszym wspomnieniem moich klientów. Konsola od zawsze była moim hobby, dlatego mimo
           pracy na etacie postanowiłem podążać za marzeniami i spełniać się w tym co kocham. Tym
-          sposobem, jestem częścią tej branży od 8 lat i nie zamierzam zwalniać a przeciwnie,
-          dopiero nabieram rozpędu.
+          sposobem, jestem częścią tej branży od {{ this.getExperienceDate() }} lat i nie zamierzam
+          zwalniać a przeciwnie, dopiero nabieram rozpędu.
         </p>
       </div>
       <div class="about-me-image"></div>
@@ -54,7 +54,22 @@
 
 <script>
 export default {
-  name: 'About',
+  name: 'About-section',
+  mounted() {
+    this.mounted = true;
+  },
+  data() {
+    return {
+      mounted: false,
+    };
+  },
+  methods: {
+    getExperienceDate() {
+      const date = new Date();
+      const year = date.getFullYear();
+      return year - 2014;
+    },
+  },
 };
 </script>
 
@@ -81,10 +96,11 @@ export default {
       font-weight: 400;
       font-size: 24px;
       line-height: 45px;
-
       color: #000000;
-
       width: 40%;
+      opacity: 0.4;
+      transform: translate(-40px, -5px);
+      transition: 0.3s ease-out;
       h2 {
         font-weight: 600;
         margin-bottom: 50px;
@@ -94,6 +110,10 @@ export default {
         font-size: 24px;
         font-weight: 400;
       }
+    }
+    .text.active {
+      opacity: 1;
+      transform: translate(20px, 20px);
     }
     img {
       width: 25%;
