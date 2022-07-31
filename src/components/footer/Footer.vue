@@ -1,23 +1,31 @@
 <template>
   <footer>
-    <section class="social-container" v-if="this.width <= 1024">
+    <section class="social-container">
       <div class="social-tile">
-        <h2>Instagram</h2>
-        <img src="../../assets/svg/instagram.png" />
+        <a href="https://www.instagram.com/_djdziadek_/">
+          <h2>Instagram</h2>
+          <img src="../../assets/svg/instagram.png" />
+        </a>
       </div>
       <div class="social-tile">
-        <h2>Facebook</h2>
-        <Facebook />
+        <a href="https://www.facebook.com/Dj-wodzirej-S%C5%82awomir-Dziadek-106330881397763/">
+          <h2>Facebook</h2>
+          <Facebook />
+        </a>
       </div>
     </section>
 
     <section class="contact">
       <div class="contact-data-container">
         <h2>Kontakt</h2>
-        <p>(+48) 555 555 555</p>
-        <p v-if="this.width >= 1024">slawekdjdziadek@gmail.com</p>
+        <p><a href="tel:514-209-538">(+48) 514 209 538</a></p>
+        <p v-if="this.width >= 1024">
+          <a href="mailto:slawekdjdziadek@gmail.com">slawekdjdziadek@gmail.com</a>
+        </p>
         <router-link to="/contact" @click="scrollToTop()">formularz kontaktowy</router-link>
-        <p v-if="this.width <= 1024">slawekdjdziadek@gmail.com</p>
+        <p v-if="this.width <= 1024">
+          <a href="mailto:slawekdjdziadek@gmail.com">slawekdjdziadek@gmail.com</a>
+        </p>
       </div>
     </section>
   </footer>
@@ -56,25 +64,26 @@ export default {
 footer {
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-top: 85px;
+  background-color: #eeeeee;
+  padding: 150px 0px 110px 0px;
   section {
     text-align: center;
-    width: 30%;
-    height: 250px;
-    h2 {
-      margin-bottom: 20px;
-    }
+    width: 33%;
   }
   .social-container {
-    h2 {
-      margin: 0;
-    }
+    display: flex;
+    width: 75%;
+    justify-content: space-around;
+    align-items: flex-start;
     .social-tile {
-      margin-bottom: 50px;
+      a {
+        color: black;
+        text-decoration: none;
+      }
       svg {
         margin-top: 24px;
+        cursor: pointer;
       }
       img {
         margin-top: 24px;
@@ -104,10 +113,24 @@ footer {
     }
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   footer {
     flex-direction: column;
     width: 100%;
+    padding: 120px 0px 0px 0px;
+
+    .social-container {
+      flex-direction: column;
+      align-items: center;
+      height: 200px;
+      width: 100%;
+      .social-tile {
+        margin-top: 48px;
+      }
+    }
+    .contact {
+      padding-top: 48px;
+    }
     section {
       width: 100%;
       margin-top: 0px;

@@ -156,8 +156,9 @@ export default {
         height: 303px;
         border-radius: 50%;
         overflow: hidden;
-        background-color: #1d1d1d30;
+        background-color: #1d1d1d35;
         position: relative;
+        box-shadow: 5px 10px 25px 3px #00000025;
         img {
           position: absolute;
           z-index: -1;
@@ -211,6 +212,10 @@ export default {
   .about {
     overflow: hidden;
     .about-general {
+      .text {
+        width: 100%;
+        padding: 24px 48px 24px 12px;
+      }
       .about-me-image {
         width: 80%;
         height: 600px;

@@ -83,10 +83,9 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.onScroll);
   },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this.onScroll);
-  },
+
   unmounted() {
+    window.removeEventListener('scroll', this.onScroll);
     window.removeEventListener('resize', this.onResize);
   },
   methods: {
@@ -124,8 +123,7 @@ export default {
     transform: translate3d(0, -100%, 0);
   }
   nav {
-    width: 50%;
-    min-width: 700px;
+    width: 100%;
     ul {
       width: 100%;
       display: flex;
@@ -135,7 +133,8 @@ export default {
 
       li {
         list-style: none;
-        padding: 5px 15px;
+        padding: 0px;
+        width: 100%;
         min-width: 100px;
         text-align: center;
         a {

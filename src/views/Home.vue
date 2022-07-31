@@ -45,6 +45,7 @@ export default {
 }
 @media (max-width: 968px) {
   .home {
+    overflow: hidden;
     .h1 {
       font-size: 40px;
       left: 50px;

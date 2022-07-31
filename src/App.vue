@@ -36,6 +36,10 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.onScroll);
   },
+  unmounted() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+  },
   methods: {
     onScroll() {
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -72,6 +76,7 @@ body {
 #menu.showNavbar {
   top: 0px;
   transition: 0.3s ease-out;
+  width: 100%;
 }
 #menu.hideNavbar {
   top: -200px;

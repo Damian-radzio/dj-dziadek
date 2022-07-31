@@ -12,10 +12,16 @@
       class="image-wrapper"
       v-for="image in images"
       v-bind:key="image"
-      :href="image.responsiveImage.src"
+      :href="image.responsiveImage.webpSrcSet"
       data-lightbox="roadtrip"
     >
-      <img class="img" :src="image.responsiveImage.src" aspect-ratio="1 " alt="img" lazy="true" />
+      <img
+        class="img"
+        :src="image.responsiveImage.webpSrcSet"
+        aspect-ratio="1 "
+        alt="img"
+        lazy="false"
+      />
     </a>
   </ul>
 </template>
@@ -41,6 +47,9 @@ export default {
     lightbox.setAttribute('src', 'lightbox/lightbox-plus-jquery.min.js');
     document.head.appendChild(lightbox);
   },
+  unmounted() {
+    window.removeEventListener('scroll', this.onScroll);
+  },
   methods: {
     onScroll() {
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -59,7 +68,8 @@ export default {
         {
         allUploads(first: 100) {
     responsiveImage {
-      src
+      src,
+      webpSrcSet
     }
   }
         }`,
@@ -135,6 +145,15 @@ export default {
       padding: 4px;
       object-fit: cover;
       vertical-align: bottom;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .photograph-link {
+    padding: 10px;
+
+    .social-container {
+      padding: 12px 24px;
     }
   }
 }
