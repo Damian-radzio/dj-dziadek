@@ -1,6 +1,6 @@
 <template>
-  <div id="menu" :class="{ showNavBar: this.showNavbar, hideNavbar: !this.showNavbar }">
-    <Menu />
+  <div id="menu" :class="{ showNavbar: this.showNavbar, hideNavbar: !this.showNavbar }">
+    <Menu :showNavbar="this.showNavbar" />
   </div>
   <div class="children">
     <router-view v-slot="{ Component }">
@@ -75,12 +75,12 @@ body {
 }
 #menu.showNavbar {
   top: 0px;
-  transition: 0.3s ease-out;
+  transition: 0.2s;
   width: 100%;
 }
 #menu.hideNavbar {
-  top: -200px;
-  transition: 0.3s ease-in;
+  top: -140px;
+  transition: 0.2s;
 }
 
 #footer {

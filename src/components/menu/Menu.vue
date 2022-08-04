@@ -3,7 +3,7 @@
     <div class="icon-wrapper">
       <DjDziadekIcon />
     </div>
-    <nav v-if="this.width >= 1240">
+    <nav v-if="this.width >= 768">
       <ul>
         <li><router-link class-active="active" to="/">Start</router-link></li>
         <li><router-link class-active="active" to="/about">O mnie</router-link></li>
@@ -17,7 +17,19 @@
       <HamburgerBtn v-if="!this.isMobileMenuOpen" />
       <OpenedHamburgerBtn v-if="this.isMobileMenuOpen" />
     </div>
-    <div class="mobile-menu" v-if="this.isMobileMenuOpen && this.width <= 1240">
+    <div class="mobile-menu" v-if="this.isMobileMenuOpen && this.width <= 768">
+      <section class="social-container">
+        <div class="social-tile">
+          <a href="https://www.instagram.com/_djdziadek_/">
+            <img src="../../assets/svg/instagram.png" />
+          </a>
+        </div>
+        <div class="social-tile">
+          <a href="https://www.facebook.com/Dj-wodzirej-S%C5%82awomir-Dziadek-106330881397763/">
+            <Facebook />
+          </a>
+        </div>
+      </section>
       <nav>
         <ul>
           <li>
@@ -67,9 +79,12 @@
 import DjDziadekIcon from '../../assets/svg/dj-dziadek-logo.svg';
 import HamburgerBtn from '../../assets/svg/hamburger.svg';
 import OpenedHamburgerBtn from '../../assets/svg/opened-menu-hamburger.svg';
+import Facebook from '../../assets/svg/facebook.svg';
+
 export default {
   name: 'Menu-component',
-  components: { DjDziadekIcon, HamburgerBtn, OpenedHamburgerBtn },
+  components: { DjDziadekIcon, HamburgerBtn, OpenedHamburgerBtn, Facebook },
+  props: ['showNavbar'],
   data() {
     return {
       width: window.innerWidth,
@@ -79,13 +94,10 @@ export default {
   },
   created() {
     window.addEventListener('resize', this.onResize);
-  },
-  mounted() {
     window.addEventListener('scroll', this.onScroll);
   },
 
   unmounted() {
-    window.removeEventListener('scroll', this.onScroll);
     window.removeEventListener('resize', this.onResize);
   },
   methods: {
@@ -102,6 +114,9 @@ export default {
     methodsAfterMenuElementClick() {
       this.isMobileMenuOpen = false;
       this.scrollToTop();
+    },
+    onScroll() {
+      if (!this.showNavbar) this.isMobileMenuOpen = false;
     },
   },
 };
@@ -124,6 +139,7 @@ export default {
   }
   nav {
     width: 100%;
+    margin-left: 48px;
     ul {
       width: 100%;
       display: flex;
@@ -152,16 +168,30 @@ export default {
   }
   .hamburger-wrapper {
     cursor: pointer;
+    transition: 0.4s;
   }
 
   .mobile-menu {
+    display: flex;
     position: absolute;
-    z-index: 10;
+    z-index: 9999999;
     width: 100%;
     height: auto;
     left: 0;
     top: 125px;
     background-color: #fff;
+    .social-container {
+      position: absolute;
+      bottom: 50px;
+      left: 25px;
+      display: flex;
+      width: 200px;
+      .social-tile {
+        img {
+          width: 83px;
+        }
+      }
+    }
     nav {
       width: 100%;
       ul {
@@ -176,17 +206,41 @@ export default {
         margin-bottom: 46px;
       }
     }
+    transition: 0.2s;
   }
   transition: 0.2s;
 }
 .hiddenNavbar {
   transform: translateY(-100%);
 }
-@media (max-width: 1240px) {
+@media (max-width: 1024px) {
   .header-container {
-    margin: 12px 32px 0px 16px;
+    padding: 12px 24px 0px 16px;
+    margin: 0;
     nav {
-      min-width: 280px;
+      min-width: 200px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .header-container {
+    .mobile-menu {
+      nav {
+        ul {
+          li {
+            padding: 30px 24px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 280px) {
+  .header-container {
+    .mobile-menu {
+      .social-container {
+        flex-direction: column;
+      }
     }
   }
 }
