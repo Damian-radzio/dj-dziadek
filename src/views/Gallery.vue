@@ -3,8 +3,12 @@
     <div class="photograph-link" :class="{ hiddenNavbar: !this.showNavbar }">
       <div class="social-container">
         <div class="text"><p>Fotograf</p></div>
-        <img src="../assets/svg/instagram.png" />
-        <Facebook />
+        <a href="instagram.com/photo_martynek/">
+          <img src="../assets/svg/instagram.png" />
+        </a>
+        <a href="https://www.facebook.com/Fotografia-Skrond-Martyna-103140005265426">
+          <Facebook />
+        </a>
       </div>
     </div>
     <div class="images-wrapper" :class="{ lessFromTop: !this.showNavbar }">

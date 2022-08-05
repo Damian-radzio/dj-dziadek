@@ -33,4 +33,10 @@ body {
   margin: 100px;
   margin-top: 200px;
 }
+@media (max-width: 768px) {
+  #reviews-wrapper {
+    margin: 0 24px;
+    margin-top: 200px;
+  }
+}
 </style>

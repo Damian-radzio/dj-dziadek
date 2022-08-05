@@ -33,9 +33,15 @@
         />
         <input type="email" class="input" name="email" placeholder="Email *" required />
         <input name="numer_tel" class="input" type="text" placeholder="Telefon *" required />
-        <input name="lokalizacja_imprezy" class="input" type="text" placeholder="Miejscowość" />
-        <input name="termin-imprezy" class="input" type="date" placeholder="Termin" />
         <input
+          name="lokalizacja_imprezy"
+          class="input place"
+          type="text"
+          placeholder="Miejscowość"
+        />
+        <label for="temin-imprezy" class="label date">Wybierz termin imprezy</label>
+        <input name="termin-imprezy" class="input" type="date" />
+        <textarea
           name="wiadomosc"
           class="message input"
           type="text"
@@ -44,28 +50,13 @@
 
         <input class="submit" type="submit" value="Wyślij" />
       </form>
-
-      <!-- <div class="contact">
-        <div class="contact-data-container">
-          <h2>Kontakt</h2>
-          <p>(+48) 555 555 555</p>
-          <a href="mailto: slawekdjdziadek@gmail.com">slawekdjdziadek@gmail.com</a>
-        </div>
-        <div class="social-container">
-          <Facebook />
-          <img src="../assets/svg/instagram.png" alt="instagram" />
-        </div>
-      </div> -->
     </section>
   </div>
 </template>
 
 <script>
-// import Facebook from '../assets/svg/facebook.svg';
-// import Instagram from '../assets/svg/instagram.png';
 export default {
   name: 'Contact-section',
-  // components: { Facebook, Instagram },
   data() {
     return {
       inputsData: {
@@ -123,6 +114,11 @@ header {
       resize: none;
       align-items: center;
     }
+
+    .date {
+      padding-bottom: 12px;
+      min-width: 300px;
+    }
     .input {
       min-width: 280px;
       width: 100%;
@@ -133,6 +129,7 @@ header {
       background-color: #e5e5e5;
       border-radius: 29px;
       transition: 0.4s;
+      height: 40px;
       padding: 0px 30px;
       font-weight: bolder;
       color: #1d1d1d;
@@ -141,6 +138,13 @@ header {
         opacity: 1;
       }
     }
+    .place {
+      margin-bottom: 48px;
+    }
+    .message {
+      height: 100px;
+      padding: 20px;
+    }
     .submit {
       border-style: none;
       background-color: #1d1d1d;
@@ -148,7 +152,8 @@ header {
       letter-spacing: 1.3px;
       align-self: flex-end;
       margin-top: 30px;
-      padding: 10px 40px;
+      width: 120px;
+      height: 40px;
       border-radius: 25px;
       cursor: pointer;
       transition: 0.3s;

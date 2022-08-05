@@ -14,10 +14,14 @@
     </nav>
 
     <div v-else class="hamburger-wrapper" v-on:click="openMobileMenu">
-      <HamburgerBtn v-if="!this.isMobileMenuOpen" />
-      <OpenedHamburgerBtn v-if="this.isMobileMenuOpen" />
+      <HamburgerBtn v-if="!this.isMobileMenuOpen" :click="(this.menuMobileOpen = true)" />
+      <OpenedHamburgerBtn v-if="this.isMobileMenuOpen" :click="(this.menuMobileOpen = false)" />
     </div>
-    <div class="mobile-menu" v-if="this.isMobileMenuOpen && this.width <= 768">
+    <div
+      class="mobile-menu"
+      :class="(showMobileMenu = this.menuMobileOpen)"
+      v-if="this.isMobileMenuOpen && this.width <= 768"
+    >
       <section class="social-container">
         <div class="social-tile">
           <a href="https://www.instagram.com/_djdziadek_/">
@@ -90,6 +94,7 @@ export default {
       width: window.innerWidth,
       height: window.innerHeight,
       isMobileMenuOpen: false,
+      isOpen: false,
     };
   },
   created() {
@@ -116,7 +121,7 @@ export default {
       this.scrollToTop();
     },
     onScroll() {
-      if (!this.showNavbar) this.isMobileMenuOpen = false;
+      if (this.isMobileMenuOpen) !this.isOpen;
     },
   },
 };
@@ -178,7 +183,7 @@ export default {
     width: 100%;
     height: auto;
     left: 0;
-    top: 125px;
+    top: -450px;
     background-color: #fff;
     .social-container {
       position: absolute;
@@ -206,13 +211,18 @@ export default {
         margin-bottom: 46px;
       }
     }
-    transition: 0.2s;
+    transition: 0.3s;
   }
-  transition: 0.2s;
+  .showMobileMenu {
+    transition: 0.3s;
+    top: 125px;
+  }
 }
+
 .hiddenNavbar {
   transform: translateY(-100%);
 }
+
 @media (max-width: 1024px) {
   .header-container {
     padding: 12px 24px 0px 16px;

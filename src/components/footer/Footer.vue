@@ -100,6 +100,7 @@ footer {
       margin-bottom: 40px;
     }
     .contact-data-container {
+      margin-right: 24px;
       padding-left: 150px;
       display: flex;
       flex-direction: column;
@@ -113,7 +114,7 @@ footer {
     }
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   footer {
     flex-direction: column;
     width: 100%;
