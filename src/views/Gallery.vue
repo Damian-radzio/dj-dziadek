@@ -170,7 +170,7 @@ export default {
     opacity: 0;
   }
   to {
-    opacty: 1;
+    opacity: 1;
   }
 }
 </style>

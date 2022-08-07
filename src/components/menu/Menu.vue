@@ -37,39 +37,25 @@
       <nav>
         <ul>
           <li>
-            <router-link class-active="active" to="/" v-on:click="this.isMobileMenuOpen = false"
-              >Start</router-link
-            >
+            <router-link class-active="active" to="/" v-on:click="this.isMobileMenuOpen = false">Start</router-link>
           </li>
           <li>
-            <router-link
-              class-active="active"
-              to="/about"
-              v-on:click="methodsAfterMenuElementClick()"
+            <router-link class-active="active" to="/about" v-on:click="methodsAfterMenuElementClick()"
               >O mnie</router-link
             >
           </li>
           <li>
-            <router-link
-              class-active="active"
-              to="/gallery"
-              v-on:click="methodsAfterMenuElementClick()"
+            <router-link class-active="active" to="/gallery" v-on:click="methodsAfterMenuElementClick()"
               >Galeria</router-link
             >
           </li>
           <li>
-            <router-link
-              class-active="active"
-              to="/reviews"
-              v-on:click="methodsAfterMenuElementClick()"
+            <router-link class-active="active" to="/reviews" v-on:click="methodsAfterMenuElementClick()"
               >Opinie</router-link
             >
           </li>
           <li>
-            <router-link
-              class-active="active"
-              to="/contact"
-              v-on:click="methodsAfterMenuElementClick()"
+            <router-link class-active="active" to="/contact" v-on:click="methodsAfterMenuElementClick()"
               >Kontakt</router-link
             >
           </li>
@@ -122,6 +108,7 @@ export default {
     },
     onScroll() {
       if (this.isMobileMenuOpen) !this.isOpen;
+      if (!this.showNavbar) this.isMobileMenuOpen = false;
     },
   },
 };
@@ -183,7 +170,7 @@ export default {
     width: 100%;
     height: auto;
     left: 0;
-    top: -450px;
+    top: 125px;
     background-color: #fff;
     .social-container {
       position: absolute;

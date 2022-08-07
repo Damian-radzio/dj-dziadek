@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [vue(), svgLoader()],
   build: {
     rollupOptions: {
-      external: ['Vue'],
+      external: ['vue'],
     },
   },
 });
