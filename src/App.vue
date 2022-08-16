@@ -57,9 +57,9 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Brygada 1918', serif;
 }
 body {
-  font-family: 'Brygada 1918', serif;
   position: relative;
 }
 .children {

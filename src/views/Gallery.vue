@@ -27,7 +27,7 @@
 
 <script>
 import axios from 'axios';
-import Facebook from '../assets/svg/facebook-small.svg';
+import * as Facebook from '../assets/svg/facebook-small.svg';
 
 export default {
   name: 'Gallery-section',

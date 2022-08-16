@@ -1,7 +1,7 @@
 <template>
   <header class="header-container">
     <div class="icon-wrapper">
-      <DjDziadekIcon />
+      <img :src="DjDziadekIcon" alt="logo" />
     </div>
     <nav v-if="this.width >= 768">
       <ul>
@@ -66,14 +66,21 @@
 </template>
 
 <script>
-import DjDziadekIcon from '../../assets/svg/dj-dziadek-logo.svg';
-import HamburgerBtn from '../../assets/svg/hamburger.svg';
-import OpenedHamburgerBtn from '../../assets/svg/opened-menu-hamburger.svg';
-import Facebook from '../../assets/svg/facebook.svg';
+import DjDziadekIcon from '@/assets/svg/dj-dziadek-logo.svg';
+import * as HamburgerBtn from '../../assets/svg/hamburger.svg';
+import * as OpenedHamburgerBtn from '../../assets/svg/opened-menu-hamburger.svg';
+import * as Facebook from '../../assets/svg/facebook.svg';
 
 export default {
   name: 'Menu-component',
-  components: { DjDziadekIcon, HamburgerBtn, OpenedHamburgerBtn, Facebook },
+  setup() {
+    return {
+      DjDziadekIcon,
+      HamburgerBtn,
+      OpenedHamburgerBtn,
+      Facebook,
+    };
+  },
   props: ['showNavbar'],
   data() {
     return {

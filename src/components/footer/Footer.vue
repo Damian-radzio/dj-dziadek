@@ -4,13 +4,13 @@
       <div class="social-tile">
         <a href="https://www.instagram.com/_djdziadek_/">
           <h2>Instagram</h2>
-          <img src="../../assets/svg/instagram.png" />
+          <img src="@/assets/svg/instagram.png" />
         </a>
       </div>
       <div class="social-tile">
         <a href="https://www.facebook.com/Dj-wodzirej-S%C5%82awomir-Dziadek-106330881397763/">
           <h2>Facebook</h2>
-          <Facebook />
+          <img :src="Facebook" />
         </a>
       </div>
     </section>
@@ -35,7 +35,11 @@
 import Facebook from '../../assets/svg/facebook.svg';
 export default {
   name: 'Footer-component',
-  components: { Facebook },
+  setup() {
+    return {
+      Facebook,
+    };
+  },
   data() {
     return {
       width: window.innerWidth,

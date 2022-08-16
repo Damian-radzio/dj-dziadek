@@ -48,7 +48,7 @@
 }
 </style>
 <script>
-import CloseIcon from '../assets/svg/close-icon-x.svg';
+import * as CloseIcon from '../assets/svg/close-icon-x.svg';
 
 export default {
   name: 'SentInfo',
