@@ -63,7 +63,7 @@ body {
   position: relative;
 }
 .children {
-  min-height: 100vh;
+  min-height: 80vh;
 }
 #menu {
   position: fixed;
@@ -85,20 +85,19 @@ body {
 
 #footer {
   width: 100%;
-  height: 2.5rem;
   z-index: -100;
 }
 
 .route-enter-from {
   opacity: 0.3;
-  transform: translateY(200px);
+  transform: translateY(100px);
 }
 .route-enter-active {
   transition: all 0.5s ease-out;
 }
 .route-leave-to {
   opacity: 0;
-  transform: translateY(-200px);
+  transform: translateY(-100px);
 }
 .route-leave-active {
   transition: all 0.5s ease-in;

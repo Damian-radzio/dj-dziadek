@@ -106,6 +106,7 @@ footer {
       flex-direction: column;
       p,
       a {
+        color: black;
         text-decoration: none;
         padding-bottom: 25px;
         max-width: 250px;
