@@ -24,7 +24,7 @@
         </p>
         <router-link to="/contact" @click="scrollToTop()">formularz kontaktowy</router-link>
         <p v-if="this.width <= 1024">
-          <a href="mailto:slawekdjdziadek@gmail.com">slawekdjdziadek@gmail.com</a>
+          <a href="mailto:slawekdjdziadek@gmail.com">slawekdjdziadek@gmail.com </a>
         </p>
       </div>
     </section>
