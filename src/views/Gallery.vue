@@ -7,7 +7,7 @@
           <img src="../assets/svg/instagram.png" />
         </a>
         <a href="https://www.facebook.com/Fotografia-Skrond-Martyna-103140005265426">
-          <Facebook />
+          <img :src="Facebook" />
         </a>
       </div>
     </div>
@@ -27,11 +27,15 @@
 
 <script>
 import axios from 'axios';
-import * as Facebook from '../assets/svg/facebook-small.svg';
+import Facebook from '../assets/svg/facebook-small.svg';
 
 export default {
   name: 'Gallery-section',
-  components: { Facebook },
+  setup() {
+    return {
+      Facebook,
+    };
+  },
   data() {
     return {
       images: [],

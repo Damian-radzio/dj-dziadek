@@ -14,8 +14,8 @@
     </nav>
 
     <div v-else class="hamburger-wrapper" v-on:click="openMobileMenu">
-      <HamburgerBtn v-if="!this.isMobileMenuOpen" :click="(this.menuMobileOpen = true)" />
-      <OpenedHamburgerBtn v-if="this.isMobileMenuOpen" :click="(this.menuMobileOpen = false)" />
+      <img :src="HamburgerBtn" v-if="!this.isMobileMenuOpen" :click="(this.menuMobileOpen = true)" />
+      <img :src="OpenedHamburgerBtn" v-if="this.isMobileMenuOpen" :click="(this.menuMobileOpen = false)" />
     </div>
     <div
       class="mobile-menu"
@@ -30,7 +30,7 @@
         </div>
         <div class="social-tile">
           <a href="https://www.facebook.com/Dj-wodzirej-S%C5%82awomir-Dziadek-106330881397763/">
-            <Facebook />
+            <img :src="Facebook" />
           </a>
         </div>
       </section>
@@ -67,9 +67,9 @@
 
 <script>
 import DjDziadekIcon from '@/assets/svg/dj-dziadek-logo.svg';
-import * as HamburgerBtn from '../../assets/svg/hamburger.svg';
-import * as OpenedHamburgerBtn from '../../assets/svg/opened-menu-hamburger.svg';
-import * as Facebook from '../../assets/svg/facebook.svg';
+import HamburgerBtn from '../../assets/svg/hamburger.svg';
+import OpenedHamburgerBtn from '../../assets/svg/opened-menu-hamburger.svg';
+import Facebook from '../../assets/svg/facebook.svg';
 
 export default {
   name: 'Menu-component',
