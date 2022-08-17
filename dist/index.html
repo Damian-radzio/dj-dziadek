@@ -1,49 +1,14 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="height=device-height, 
-                      width=device-width, initial-scale=1.0, 
-                      minimum-scale=1.0, maximum-scale=1.0, 
-                      shrink-to-fit=no, user-scalable=no, target-densitydpi=device-dpi"
-    />
-    <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="src/assets/favicon-package/apple-touch-icon.png" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmAxgQFx9KaX2MAAADJUlEQVRIx5WVS08UWRiGn6qutsULyMQZbTGYeBsdB4wT0Y5itL3EaGLUhS6Mif4BTdw44z+YxEzGmBicTPQHuHDhRhcaVLwQo1GDBiLSIIgN0iAwGOjuqnpd0F1V3TSMfKtzvnPe93y3vMegyAQWq9lNnFqizAe+kuQNjdyjHdtgBhOyVKcrSiirYrPVpavaKkvTglFUf6pfM9mALqpKqCR8sx7I1f/bI20tohBCu9T2HeBJa9feAIUQqpsFfJIi5lEILdP9qXey+qJP6tWQMqUTWS7AEpicZWdhTVI8oxMXC7AxqCbGT4VXtnOO83IMwRZuscQ/cWnmCeuoRUQwsBiljbfUsQOz8JXDPDExORWEw11ecpw4JnMJYWAxQh0naOVOYe0XcxoLrVdHMLVX+ls96tWIsrmeuspoVEkldFnPC+vwQTUmcap90nEaOUSYSsqxmBxbgzALKSPCYR4wFoyhij0WcSzf08IPrCo5qRVUAFFeUe87Q8RNaoLX3rIptxojwXs+4TJEgq8572+0FtahxmSZv+umi6hX4n/4zG3u8JEGL/AoH+kIEiw1mZ9fv+d3btDihTyPjRzgIRHKWeRFeJM/6PQJyrzG9nOOJkZo884MxAJCZPE14B1DNHOBYc9j5tMbJ5kLPT9ONg7vqKIikPUAQvQwnndMmDkcCyhHwAAuAKNU0kQvxxkj4jUq5aWXs6RFC2sB5rEIB5NBskSAFZzBIYx4wUFCANikAIdKyry2mdzHASjjGGtxGCEDCAOLCCYmu9kACMgyjM1KjjAnn2cj+kWd+cl8rVNqkK202jReMLNpJZSWq+s6qWe+u1u1KKSG/N7VhGxJ/+mFOtSnjFw5ymhAH/RYw5JsTQRV75osQxDjFj8Gp0NAO3MQGRbSxWJc1mBSJOmDHKUJoZAuThUcV2mNqVMpJZUurbWXchIvVKWm6cRvWpl+qmpfE1FM7bMS1Q7VF+vy3llQJLS/1M8Q0+Pvgjdr+3R/03L9pdSM4EFdUnUJuEdiaZv+VbfsKVBHPbqmeoULwcZUEsL8zD7i/EqUucAEfbyhkbu0ki0GfAOh+LEZ8MnklQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMi0wMy0yNFQxNjoyMzozMSswMDowMCfexaUAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjItMDMtMjRUMTY6MjM6MzErMDA6MDBWg30ZAAAAV3pUWHRSYXcgcHJvZmlsZSB0eXBlIGlwdGMAAHic4/IMCHFWKCjKT8vMSeVSAAMjCy5jCxMjE0uTFAMTIESANMNkAyOzVCDL2NTIxMzEHMQHy4BIoEouAOoXEXTyQjWVAAAAAElFTkSuQmCC"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmAxgQFx49bk0aAAABMUlEQVQoz22Ryy5DARRFl1u0gkgYaBum+A4Tj5iYmfiopmIihh5BRBof0AGJsUdCGFHvpq1XqnVvl8ElSOzZyTo5yVkbADHppGuWDA0tue6USeELYtqcVX+nat6MSIx3/C8FM4Kd5uL52RMPPPDYp++VBZNtTrJCP9xyyiBdJKhSYZQsQJV5XFV9s+i1H7aMbFiy6Gt8Y6PNK4bgHBmhRkiKiD4uiBgFuAlIQ5ktAuCQM4qcAAm2KQOkA4AtlrgEoIuQALhimQIAAXeQoM4jMEQvYwwAZeokAO7b2WNugiN6eGeYDkJaNOhmlnGAfZy2onWb1ixZ8cFLKzatxz5nsNN8/FHLpi8+2bD1LWrRJGLGwr+qd836VVbGBWt/YM1Fs/LTaMppN7wxMvLWTWdMxfAT/60s4CJ7aq8AAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDMtMjRUMTY6MjM6MzArMDA6MDCBqc4RAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTAzLTI0VDE2OjIzOjMwKzAwOjAw8PR2rQAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg=="
-    />
-
-    <link rel="mask-icon" href="src/assets/favicon-package/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
-
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;500;600&family=Open+Sans:wght@400;500&family=Roboto+Slab:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <title>Dj Dziadek</title>
-    <script type="module" crossorigin src="/assets/index.68868b78.js"></script>
-    <link rel="stylesheet" href="/assets/index.ccdb6fbf.css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Vue App</title>
+    <script defer="defer" src="js/chunk-vendors.77d13ae1.js"></script>
+    <script defer="defer" src="js/app.ad987033.js"></script>
+    <link href="css/app.f5b05be9.css" rel="stylesheet" />
   </head>
-
   <body>
     <div id="app"></div>
   </body>
