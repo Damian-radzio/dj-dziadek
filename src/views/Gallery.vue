@@ -129,12 +129,11 @@ export default {
   transition: 0.2s ease;
 }
 .hiddenNavbar {
-  padding: 10px;
   top: 85px;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
 }
 .images-wrapper {
-  margin-top: 110px;
+  margin-top: 90px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -162,6 +161,7 @@ export default {
 @media (max-width: 768px) {
   .photograph-link {
     padding: 10px;
+    top: 85px;
 
     .social-container {
       padding: 12px 24px;

@@ -81,6 +81,9 @@ footer {
     justify-content: space-around;
     align-items: flex-start;
     .social-tile {
+      h2 {
+        font-size: 20px;
+      }
       a {
         color: black;
         text-decoration: none;
@@ -132,6 +135,12 @@ footer {
       width: 100%;
       .social-tile {
         margin-top: 48px;
+        h2 {
+          font-size: 18px;
+        }
+        img {
+          width: 60px;
+        }
       }
     }
     .contact {

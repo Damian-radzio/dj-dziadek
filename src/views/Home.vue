@@ -69,6 +69,9 @@ export default {
 }
 @media (max-width: 768px) {
   .home {
+    .hero-image {
+      margin-top: 85px;
+    }
     .h1 {
       font-size: 30px;
       left: 30px;

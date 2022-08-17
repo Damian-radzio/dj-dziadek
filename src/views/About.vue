@@ -4,11 +4,10 @@
       <div class="text" :class="{ active: this.mounted }">
         <h2>Cześć, jestem Sławek!</h2>
         <p>
-          Od lat dokładam wszelkich starań, by każda poprowadzona przeze mnie impreza stała się
-          najlepszym wspomnieniem moich klientów. Konsola od zawsze była moim hobby, dlatego mimo
-          pracy na etacie postanowiłem podążać za marzeniami i spełniać się w tym co kocham. Tym
-          sposobem, jestem częścią tej branży od {{ this.getExperienceDate() }} lat i nie zamierzam
-          zwalniać a przeciwnie, dopiero nabieram rozpędu.
+          Od lat dokładam wszelkich starań, by każda poprowadzona przeze mnie impreza stała się najlepszym wspomnieniem
+          moich klientów. Konsola od zawsze była moim hobby, dlatego mimo pracy na etacie postanowiłem podążać za
+          marzeniami i spełniać się w tym co kocham. Tym sposobem, jestem częścią tej branży od
+          {{ this.getExperienceDate() }} lat i nie zamierzam zwalniać a przeciwnie, dopiero nabieram rozpędu.
         </p>
       </div>
       <div class="about-me-image"></div>
@@ -212,11 +211,13 @@ export default {
   .about {
     overflow: hidden;
     .about-general {
+      margin: 15px;
       .text {
         width: 100%;
         padding: 24px 48px 24px 12px;
       }
       .about-me-image {
+        margin-top: 15px;
         width: 80%;
         height: 600px;
       }

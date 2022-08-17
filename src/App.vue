@@ -1,6 +1,6 @@
 <template>
-  <div id="menu" :class="{ showNavbar: this.showNavbar, hideNavbar: !this.showNavbar }">
-    <Menu :showNavbar="this.showNavbar" />
+  <div id="menu">
+    <Menu />
   </div>
   <div class="children">
     <router-view v-slot="{ Component }">
@@ -70,17 +70,13 @@ body {
   width: 100%;
   top: 0;
   background-color: white;
-  z-index: 100;
+  z-index: 9999999999;
   transition: 0.3s ease-out;
 }
 #menu.showNavbar {
   top: 0px;
   transition: 0.2s;
   width: 100%;
-}
-#menu.hideNavbar {
-  top: -140px;
-  transition: 0.2s;
 }
 
 #footer {

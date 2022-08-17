@@ -17,50 +17,48 @@
       <img :src="HamburgerBtn" v-if="!this.isMobileMenuOpen" :click="(this.menuMobileOpen = true)" />
       <img :src="OpenedHamburgerBtn" v-if="this.isMobileMenuOpen" :click="(this.menuMobileOpen = false)" />
     </div>
-    <div
-      class="mobile-menu"
-      :class="(showMobileMenu = this.menuMobileOpen)"
-      v-if="this.isMobileMenuOpen && this.width <= 768"
-    >
-      <section class="social-container">
-        <div class="social-tile">
-          <a href="https://www.instagram.com/_djdziadek_/">
-            <img src="../../assets/svg/instagram.png" />
-          </a>
-        </div>
-        <div class="social-tile">
-          <a href="https://www.facebook.com/Dj-wodzirej-S%C5%82awomir-Dziadek-106330881397763/">
-            <img :src="Facebook" />
-          </a>
-        </div>
-      </section>
-      <nav>
-        <ul>
-          <li>
-            <router-link class-active="active" to="/" v-on:click="this.isMobileMenuOpen = false">Start</router-link>
-          </li>
-          <li>
-            <router-link class-active="active" to="/about" v-on:click="methodsAfterMenuElementClick()"
-              >O mnie</router-link
-            >
-          </li>
-          <li>
-            <router-link class-active="active" to="/gallery" v-on:click="methodsAfterMenuElementClick()"
-              >Galeria</router-link
-            >
-          </li>
-          <li>
-            <router-link class-active="active" to="/reviews" v-on:click="methodsAfterMenuElementClick()"
-              >Opinie</router-link
-            >
-          </li>
-          <li>
-            <router-link class-active="active" to="/contact" v-on:click="methodsAfterMenuElementClick()"
-              >Kontakt</router-link
-            >
-          </li>
-        </ul>
-      </nav>
+    <div class="mobile-menu-wrapper" :class="{ open: this.isMobileMenuOpen, close: !this.isMobileMenuOpen }">
+      <div class="mobile-menu">
+        <section class="social-container">
+          <div class="social-tile">
+            <a href="https://www.instagram.com/_djdziadek_/">
+              <img src="../../assets/svg/instagram.png" />
+            </a>
+          </div>
+          <div class="social-tile">
+            <a href="https://www.facebook.com/Dj-wodzirej-S%C5%82awomir-Dziadek-106330881397763/">
+              <img :src="Facebook" />
+            </a>
+          </div>
+        </section>
+        <nav>
+          <ul>
+            <li>
+              <router-link class-active="active" to="/" v-on:click="this.isMobileMenuOpen = false">Start</router-link>
+            </li>
+            <li>
+              <router-link class-active="active" to="/about" v-on:click="methodsAfterMenuElementClick()"
+                >O mnie</router-link
+              >
+            </li>
+            <li>
+              <router-link class-active="active" to="/gallery" v-on:click="methodsAfterMenuElementClick()"
+                >Galeria</router-link
+              >
+            </li>
+            <li>
+              <router-link class-active="active" to="/reviews" v-on:click="methodsAfterMenuElementClick()"
+                >Opinie</router-link
+              >
+            </li>
+            <li>
+              <router-link class-active="active" to="/contact" v-on:click="methodsAfterMenuElementClick()"
+                >Kontakt</router-link
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 </template>
@@ -92,7 +90,6 @@ export default {
   },
   created() {
     window.addEventListener('resize', this.onResize);
-    window.addEventListener('scroll', this.onScroll);
   },
 
   unmounted() {
@@ -113,10 +110,6 @@ export default {
       this.isMobileMenuOpen = false;
       this.scrollToTop();
     },
-    onScroll() {
-      if (this.isMobileMenuOpen) !this.isOpen;
-      if (!this.showNavbar) this.isMobileMenuOpen = false;
-    },
   },
 };
 </script>
@@ -125,7 +118,6 @@ export default {
 .header-container {
   display: flex;
   align-items: center;
-  display: flex;
   margin: 0 100px;
   margin-top: 12px;
   justify-content: space-between;
@@ -169,43 +161,56 @@ export default {
     cursor: pointer;
     transition: 0.4s;
   }
-
-  .mobile-menu {
-    display: flex;
-    position: absolute;
-    z-index: 9999999;
+  .mobile-menu-wrapper {
+    position: fixed;
     width: 100%;
-    height: auto;
+    top: 85px;
     left: 0;
-    top: 125px;
-    background-color: #fff;
-    .social-container {
-      position: absolute;
-      bottom: 50px;
-      left: 25px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+    .mobile-menu {
       display: flex;
-      width: 200px;
-      .social-tile {
-        img {
-          width: 83px;
-        }
-      }
-    }
-    nav {
+      z-index: 9999;
       width: 100%;
-      ul {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      background-color: #fff;
+      .social-container {
+        position: absolute;
+        bottom: 30px;
+        left: 25px;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-end;
-        li {
-          padding: 30px 48px;
-          text-align: right;
+        width: 200px;
+        .social-tile {
+          img {
+            width: 50px;
+          }
         }
-        margin-bottom: 46px;
       }
+      nav {
+        width: 100%;
+        ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-end;
+          li {
+            padding: 30px 48px;
+            text-align: right;
+          }
+          margin-bottom: 30px;
+        }
+      }
+      transition: 0.3s;
     }
-    transition: 0.3s;
+    transition: 0.4s;
+  }
+  .open {
+    animation: open 0.4s both;
+  }
+  .close {
+    animation: close 0.4s both;
   }
   .showMobileMenu {
     transition: 0.3s;
@@ -228,11 +233,22 @@ export default {
 }
 @media (max-width: 768px) {
   .header-container {
+    height: 85px;
+    .icon-wrapper {
+      img {
+        width: 80px;
+      }
+    }
+    .hamburger-wrapper {
+      img {
+        width: 30px;
+      }
+    }
     .mobile-menu {
       nav {
         ul {
           li {
-            padding: 30px 24px;
+            padding: 24px;
           }
         }
       }
@@ -246,6 +262,22 @@ export default {
         flex-direction: column;
       }
     }
+  }
+}
+@keyframes open {
+  from {
+    height: 0vh;
+  }
+  to {
+    height: 100vh;
+  }
+}
+@keyframes close {
+  from {
+    height: 100vh;
+  }
+  to {
+    height: 0vh;
   }
 }
 </style>

@@ -31,12 +31,11 @@ body {
 }
 #reviews-wrapper {
   margin: 100px;
-  margin-top: 200px;
+  margin-top: 170px;
 }
 @media (max-width: 768px) {
   #reviews-wrapper {
-    margin: 0 24px;
-    margin-top: 200px;
+    margin-top: 120px;
   }
 }
 </style>
