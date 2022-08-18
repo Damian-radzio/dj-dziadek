@@ -3,12 +3,14 @@
     <div class="photograph-link" :class="{ hiddenNavbar: !this.showNavbar }">
       <div class="social-container">
         <div class="text"><p>Fotograf</p></div>
-        <a href="instagram.com/photo_martynek/">
-          <img src="../assets/svg/instagram.png" />
-        </a>
-        <a href="https://www.facebook.com/Fotografia-Skrond-Martyna-103140005265426">
-          <img :src="Facebook" />
-        </a>
+        <div>
+          <a href="instagram.com/photo_martynek/">
+            <img src="../assets/svg/instagram.png" />
+          </a>
+          <a href="https://www.facebook.com/Fotografia-Skrond-Martyna-103140005265426">
+            <img :src="Facebook" />
+          </a>
+        </div>
       </div>
     </div>
     <div class="images-wrapper" :class="{ lessFromTop: !this.showNavbar }">
@@ -105,11 +107,10 @@ export default {
 
   .social-container {
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: 12px 0px;
-    margin: 0 -10px;
-    padding-right: 100px;
     .text {
       background-color: #e5e5e5;
       width: 116px;
@@ -117,13 +118,14 @@ export default {
       text-align: center;
       line-height: 37px;
       border-radius: 18.5px;
-      margin-right: 100px;
+      margin: 0 100px 0 80px;
     }
-    svg {
-      margin-left: 26px;
-    }
+
     img {
       width: 43px;
+    }
+    a {
+      margin-right: 12px;
     }
   }
   transition: 0.2s ease;
@@ -147,7 +149,7 @@ export default {
     .img {
       height: 100%;
       width: 100%;
-      max-width: 600px;
+      max-width: 500;
       padding: 4px;
       object-fit: cover;
       vertical-align: bottom;
@@ -164,7 +166,24 @@ export default {
     top: 85px;
 
     .social-container {
+      justify-content: space-between;
       padding: 12px 24px;
+      .text {
+        background-color: #e5e5e5;
+        width: 116px;
+        height: 37px;
+        text-align: center;
+        line-height: 37px;
+        border-radius: 18.5px;
+        margin: 0;
+      }
+
+      img {
+        width: 43px;
+      }
+      a {
+        margin-right: 0;
+      }
     }
   }
 }

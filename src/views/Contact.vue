@@ -3,50 +3,30 @@
     <header class="section-header-text">
       <h2>Cieszę się że tu zajrzałeś.</h2>
       <p>
-        Oznacza to że rozważasz skontaktowanie się ze mną w sprawie twojego przyjęcia, a ja wychodzę
-        na przeciw aby Ci to ułatwić. Poniżej znajduje się formularz kontaktowy, który odpowiednio
-        wypełniony zostanie do mnie bezpośrednio wysłany, a ja szybko będę mógł na niego
-        odpowiedzieć. Jeśli jednak masz do mnie więcej pytań, skontaktuj się ze mną bezpośrednio.
+        Oznacza to że rozważasz skontaktowanie się ze mną w sprawie twojego przyjęcia, a ja wychodzę na przeciw aby Ci
+        to ułatwić. Poniżej znajduje się formularz kontaktowy, który odpowiednio wypełniony zostanie do mnie
+        bezpośrednio wysłany, a ja szybko będę mógł na niego odpowiedzieć. Jeśli jednak masz do mnie więcej pytań,
+        skontaktuj się ze mną bezpośrednio.
       </p>
     </header>
 
     <section class="contact-form-wrapper">
       <h2>Formularz kontaktowy</h2>
 
-      <form
-        action="https://formsubmit.co/slawekdjdziadek@gmail.com"
-        method="POST"
-        class="contact-form"
-      >
+      <form action="https://formsubmit.co/slawekdjdziadek@gmail.com" method="POST" class="contact-form">
         <input type="hidden" name="_template" value="table" id="formularz" />
         <input type="hidden" name="_next" value="http://localhost:3000/contact/sent" />
         <input type="hidden" name="_autoresponse" value="Otrzymałem twoją wiadomość, dziękuję!" />
         <input type="hidden" name="_subject" value="Nowa wiadomość, ze strony djdziadek!" />
         <input type="hidden" name="_captcha" value="false" />
         <form action="https://formsubmit.co/email" method="POST" />
-        <input
-          type="text"
-          class="input"
-          name="imie_nazwisko"
-          placeholder="Imię i nazwisko *"
-          required
-        />
+        <input type="text" class="input" name="imie_nazwisko" placeholder="Imię i nazwisko *" required />
         <input type="email" class="input" name="email" placeholder="Email *" required />
         <input name="numer_tel" class="input" type="text" placeholder="Telefon *" required />
-        <input
-          name="lokalizacja_imprezy"
-          class="input place"
-          type="text"
-          placeholder="Miejscowość"
-        />
+        <input name="lokalizacja_imprezy" class="input place" type="text" placeholder="Miejscowość" />
         <label for="temin-imprezy" class="label date">Wybierz termin imprezy</label>
         <input name="termin-imprezy" class="input" type="date" />
-        <textarea
-          name="wiadomosc"
-          class="message input"
-          type="text"
-          placeholder="Wiadomość (opcjonalnie)"
-        />
+        <textarea name="wiadomosc" class="message input" type="text" placeholder="Wiadomość (opcjonalnie)" />
 
         <input class="submit" type="submit" value="Wyślij" />
       </form>
@@ -157,6 +137,7 @@ header {
       border-radius: 25px;
       cursor: pointer;
       transition: 0.3s;
+      font-size: 18px;
       &:hover {
         padding: 10px 46px;
       }
@@ -182,12 +163,24 @@ header {
   }
   text-align: center;
 }
-@media (max-width: 678px) {
+@media (max-width: 768px) {
   .section-header-text {
     padding: 50px;
+    font-size: 16px;
+    h2 {
+      font-size: 22px;
+    }
   }
   .contact-form-wrapper {
+    h2 {
+      margin-bottom: 48px;
+      font-size: 20px;
+      font-weight: 500;
+    }
     .contact-form {
+      .input {
+        margin-bottom: 20px;
+      }
       .submit {
         align-self: center;
       }

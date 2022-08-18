@@ -26,12 +26,10 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  min-height: 100vh;
-}
 #reviews-wrapper {
-  margin: 100px;
-  margin-top: 170px;
+  width: 82%;
+  margin: 240px auto 0px auto;
+  overflow: hidden;
 }
 @media (max-width: 768px) {
   #reviews-wrapper {

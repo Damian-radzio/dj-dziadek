@@ -76,9 +76,9 @@ export default {
 .about {
   max-width: 1640px;
   margin: 0 auto;
-  margin-top: 60px;
   .about-general {
-    margin-top: 150px;
+    margin: 240px 100px 0px 100px;
+
     display: flex;
     justify-content: space-around;
     .about-me-image {
@@ -112,19 +112,19 @@ export default {
     }
     .text.active {
       opacity: 1;
-      transform: translate(20px, 20px);
     }
     img {
-      width: 25%;
+      width: 20%;
       min-width: 350px;
     }
   }
   .announcers-wrapper {
     text-align: center;
     width: 100%;
-    margin: 120px auto;
+    margin: 0px auto;
     h2 {
       margin-bottom: 80px;
+      padding-top: 64px;
     }
     .announcers {
       margin: 0 auto;
@@ -190,9 +190,10 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       .text {
         width: 100%;
-        padding: 24px 48px;
+        padding: 48px;
       }
     }
     .announcers-wrapper {
@@ -211,15 +212,54 @@ export default {
   .about {
     overflow: hidden;
     .about-general {
-      margin: 15px;
+      margin: 0 auto;
       .text {
         width: 100%;
-        padding: 24px 48px 24px 12px;
+        margin-left: 80px;
+        h2 {
+          font-size: 22px;
+          margin-bottom: 0;
+          font-weight: 500;
+        }
+        p {
+          line-height: 2.3;
+          font-size: 16px;
+          font-weight: 300;
+        }
+        width: 100%;
       }
       .about-me-image {
         margin-top: 15px;
-        width: 80%;
+        width: 100%;
         height: 600px;
+      }
+    }
+    .announcers-wrapper {
+      h2 {
+        font-weight: 500;
+        width: 80%;
+        margin: 24px auto;
+      }
+      .announcers {
+        .img-wrapper {
+          width: 156px;
+          height: 156px;
+          p {
+            bottom: 20px;
+            font-size: 14px;
+            span {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    .coworkers-wrapper {
+      h2 {
+        margin-bottom: 60px;
+        font-weight: 500;
+        margin: 24px auto;
+        font-size: 16px;
       }
     }
   }

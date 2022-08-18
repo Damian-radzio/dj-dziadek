@@ -17,7 +17,11 @@
       <img :src="HamburgerBtn" v-if="!this.isMobileMenuOpen" :click="(this.menuMobileOpen = true)" />
       <img :src="OpenedHamburgerBtn" v-if="this.isMobileMenuOpen" :click="(this.menuMobileOpen = false)" />
     </div>
-    <div class="mobile-menu-wrapper" :class="{ open: this.isMobileMenuOpen, close: !this.isMobileMenuOpen }">
+    <div
+      v-if="this.width < 768"
+      class="mobile-menu-wrapper"
+      :class="{ open: this.isMobileMenuOpen, close: !this.isMobileMenuOpen }"
+    >
       <div class="mobile-menu">
         <section class="social-container">
           <div class="social-tile">
@@ -118,7 +122,7 @@ export default {
 .header-container {
   display: flex;
   align-items: center;
-  margin: 0 100px;
+  margin: 0 45px 0 100px;
   margin-top: 12px;
   justify-content: space-between;
   transform: translate3d(0, 0, 0);
@@ -130,7 +134,8 @@ export default {
   }
   nav {
     width: 100%;
-    margin-left: 48px;
+    margin-left: 100px;
+
     ul {
       width: 100%;
       display: flex;
@@ -140,7 +145,6 @@ export default {
 
       li {
         list-style: none;
-        padding: 0px;
         width: 100%;
         min-width: 100px;
         text-align: center;
@@ -150,6 +154,8 @@ export default {
           text-decoration: none;
           color: #1d1d1d;
           font-weight: 400;
+          padding: 20px;
+
           &.router-link-exact-active {
             font-weight: 600;
           }
@@ -196,7 +202,7 @@ export default {
           justify-content: flex-end;
           align-items: flex-end;
           li {
-            padding: 30px 48px;
+            padding: 15px 24px;
             text-align: right;
           }
           margin-bottom: 30px;

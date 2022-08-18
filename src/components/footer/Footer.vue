@@ -83,6 +83,7 @@ footer {
     .social-tile {
       h2 {
         font-size: 20px;
+        font-weight: 400;
       }
       a {
         color: black;
@@ -111,10 +112,14 @@ footer {
       padding-left: 150px;
       display: flex;
       flex-direction: column;
+      h2 {
+        font-weight: 400;
+        font-size: 20px;
+        text-align: center;
+      }
       p,
       a {
         color: black;
-        text-decoration: none;
         padding-bottom: 25px;
         max-width: 250px;
         text-align: left;
@@ -126,7 +131,8 @@ footer {
   footer {
     flex-direction: column;
     width: 100%;
-    padding: 120px 0px 0px 0px;
+    margin-top: 80px;
+    padding: 50px 0px 0px 0px;
 
     .social-container {
       flex-direction: column;
@@ -136,10 +142,10 @@ footer {
       .social-tile {
         margin-top: 48px;
         h2 {
-          font-size: 18px;
+          font-size: 20px;
         }
         img {
-          width: 60px;
+          width: 70px;
         }
       }
     }
@@ -171,6 +177,36 @@ footer {
         padding: 0;
         svg {
           margin-top: 0px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    .social-container {
+      .social-tile {
+        h2 {
+          font-size: 18px;
+          font-weight: 500;
+        }
+        img {
+          width: 60px;
+        }
+      }
+    }
+
+    section {
+      &.contact {
+        .contact-data-container {
+          width: 100%;
+          padding-left: 0;
+          h2 {
+            text-align: center;
+            font-weight: 400;
+            font-size: 18px;
+          }
         }
       }
     }
