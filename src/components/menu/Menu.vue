@@ -5,7 +5,7 @@
     </div>
     <nav v-if="this.width >= 768">
       <ul>
-        <li><router-link class-active="active" to="/">Start</router-link></li>
+        <li><router-link class-active="active" to="/" >Start</router-link></li>
         <li><router-link class-active="active" to="/about">O mnie</router-link></li>
         <li><router-link class-active="active" to="/gallery">Galeria</router-link></li>
         <li><router-link class-active="active" to="/reviews">Opinie</router-link></li>
@@ -94,10 +94,11 @@ export default {
   },
   created() {
     window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll);
   },
 
   unmounted() {
-    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
     onResize() {
@@ -114,6 +115,14 @@ export default {
       this.isMobileMenuOpen = false;
       this.scrollToTop();
     },
+    onScroll(){
+      const navBar = document.querySelector('.header-container');
+      if(window.scrollY > 50){
+        navBar.classList.add('active');
+      }else{
+                navBar.classList.remove('active');
+      }
+    },
   },
 };
 </script>
@@ -123,30 +132,31 @@ export default {
   display: flex;
   align-items: center;
   margin: 0 45px 0 100px;
-  margin-top: 12px;
+  margin-top: 5px;
+  height: 120px;
   justify-content: space-between;
+  
   transform: translate3d(0, 0, 0);
-  transition: 0.1s all ease-out;
+  transition: 0.3s height ease-out;
 
   .header-container--hidden {
     box-shadow: none;
     transform: translate3d(0, -100%, 0);
   }
   nav {
-    width: 100%;
-    margin-left: 100px;
-
+    margin-left: 0;
+    display: flex;
     ul {
       width: 100%;
       display: flex;
-      width: 100%;
+      min-width: 600px;
       max-width: 1200px;
       justify-content: space-between;
 
       li {
         list-style: none;
         width: 100%;
-        min-width: 100px;
+        width: 20%;
         text-align: center;
         a {
           font-weight: 600;
@@ -154,7 +164,7 @@ export default {
           text-decoration: none;
           color: #1d1d1d;
           font-weight: 400;
-          padding: 20px;
+          padding: 20px 0;
 
           &.router-link-exact-active {
             font-weight: 600;
@@ -223,14 +233,17 @@ export default {
     top: 125px;
   }
 }
-
+.active{
+    height: 100px;
+    transition: 0.4s; 
+}
 .hiddenNavbar {
   transform: translateY(-100%);
 }
 
 @media (max-width: 1024px) {
   .header-container {
-    padding: 12px 24px 0px 16px;
+    padding: 0px 24px;
     margin: 0;
     nav {
       min-width: 200px;

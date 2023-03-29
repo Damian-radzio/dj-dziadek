@@ -7,15 +7,7 @@
           <img src="@/assets/svg/instagram.png" />
         </a>
       </div>
-      <div class="social-tile">
-        <a href="https://www.facebook.com/Dj-wodzirej-S%C5%82awomir-Dziadek-106330881397763/">
-          <h2>Facebook</h2>
-          <img :src="Facebook" />
-        </a>
-      </div>
-    </section>
-
-    <section class="contact">
+       <section class="contact">
       <div class="contact-data-container">
         <h2>Kontakt</h2>
         <p><a href="tel:514-209-538">(+48) 514 209 538</a></p>
@@ -28,6 +20,15 @@
         </p>
       </div>
     </section>
+      <div class="social-tile">
+        <a href="https://www.facebook.com/Dj-wodzirej-S%C5%82awomir-Dziadek-106330881397763/">
+          <h2>Facebook</h2>
+          <img :src="Facebook" />
+        </a>
+      </div>
+    </section>
+
+   
   </footer>
 </template>
 
@@ -69,17 +70,18 @@ footer {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: createBundleRenderer;
   background-color: #eeeeee;
-  padding: 150px 0px 110px 0px;
+  padding: 50px 0;
   section {
     text-align: center;
     width: 33%;
   }
   .social-container {
     display: flex;
-    width: 75%;
-    justify-content: space-around;
-    align-items: flex-start;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
     .social-tile {
       h2 {
         font-size: 20px;
@@ -103,15 +105,18 @@ footer {
   .contact {
     display: flex;
     flex-direction: column;
+align-items: center;
+text-align: center;
     h2 {
       text-align: left;
-      margin-bottom: 40px;
+      margin-bottom:0;
+      padding: 0 0 24px 0;
     }
     .contact-data-container {
-      margin-right: 24px;
-      padding-left: 150px;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      margin-top: 45px;
       h2 {
         font-weight: 400;
         font-size: 20px;
@@ -121,26 +126,21 @@ footer {
       a {
         color: black;
         padding-bottom: 25px;
-        max-width: 250px;
-        text-align: left;
       }
     }
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   footer {
     flex-direction: column;
     width: 100%;
-    margin-top: 80px;
     padding: 50px 0px 0px 0px;
-
+  padding-bottom: 50px;
     .social-container {
       flex-direction: column;
       align-items: center;
-      height: 200px;
       width: 100%;
       .social-tile {
-        margin-top: 48px;
         h2 {
           font-size: 20px;
         }
@@ -149,19 +149,16 @@ footer {
         }
       }
     }
-    .contact {
-      padding-top: 48px;
-    }
+ 
     section {
       width: 100%;
       margin-top: 0px;
       &.contact {
-        margin-top: 100px;
         display: flex;
         flex-direction: column;
         .contact-data-container {
           width: 100%;
-          padding-left: 0;
+          margin: 20px 0;
           h2 {
             text-align: center;
           }
@@ -183,7 +180,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   footer {
     .social-container {
       .social-tile {

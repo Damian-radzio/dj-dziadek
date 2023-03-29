@@ -69,6 +69,7 @@ export default {
       return year - 2014;
     },
   },
+  
 };
 </script>
 
@@ -199,7 +200,6 @@ export default {
     .announcers-wrapper {
       .announcers {
         height: auto;
-        flex-direction: column;
         .img-wrapper {
           margin-bottom: 75px;
         }
@@ -212,18 +212,19 @@ export default {
   .about {
     overflow: hidden;
     .about-general {
-      margin: 0 auto;
+      margin: 75px auto 0 auto;
       .text {
         width: 100%;
-        margin-left: 80px;
+        margin-left: 40px;
         h2 {
-          font-size: 22px;
+          font-size: 24px;
           margin-bottom: 0;
-          font-weight: 500;
+          font-weight: 600;
         }
         p {
-          line-height: 2.3;
-          font-size: 16px;
+          margin-top: 20px;
+          line-height: 1.8;
+          font-size: 18px;
           font-weight: 300;
         }
         width: 100%;
@@ -241,9 +242,16 @@ export default {
         margin: 24px auto;
       }
       .announcers {
+        align-items: center;
+        div{
+          height: 200px;
+          display: flex;
+          align-items: center;
+        }
         .img-wrapper {
           width: 156px;
           height: 156px;
+          margin-bottom: 0;
           p {
             bottom: 20px;
             font-size: 14px;
@@ -266,6 +274,15 @@ export default {
 }
 
 @media (max-width: 520px) {
+    .announcers-wrapper {
+      .announcers {
+        height: auto;
+        flex-direction: column;
+        .img-wrapper {
+          margin-bottom: 75px;
+        }
+      }
+    }
   .about {
     .about-general {
       .about-me-image {

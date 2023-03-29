@@ -15,7 +15,7 @@
 
       <form action="https://formsubmit.co/slawekdjdziadek@gmail.com" method="POST" class="contact-form">
         <input type="hidden" name="_template" value="table" id="formularz" />
-        <input type="hidden" name="_next" value="http://localhost:3000/contact/sent" />
+        <input type="hidden" name="_next" value="https://djslawomirdziadek.pl/contact/sent" />
         <input type="hidden" name="_autoresponse" value="Otrzymałem twoją wiadomość, dziękuję!" />
         <input type="hidden" name="_subject" value="Nowa wiadomość, ze strony djdziadek!" />
         <input type="hidden" name="_captcha" value="false" />
@@ -189,21 +189,18 @@ header {
 }
 @media (max-width: 1024px) {
   .contact {
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
     .contact-data-container {
       width: 100%;
       padding-left: 0;
-      margin-bottom: 48px;
       h2 {
         margin: 0;
-        padding: 24px 0;
+        padding: 0 0 24px 0;
         text-align: center;
       }
       p,
       a {
-        padding: 12px;
         margin: 0 auto;
         width: 100%;
         text-align: center;

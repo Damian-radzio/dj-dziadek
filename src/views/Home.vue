@@ -41,6 +41,15 @@ export default {
     box-shadow: inset 0px 14px 24px -6px rgba(0, 0, 0, 0.304);
     width: 100%;
     height: 85vh;
+          &::after{
+position: absolute;
+content: '';
+width: 100%;
+height:100%;
+left: 0;
+top: 0;
+background-color: rgba(0, 0, 0, 0.05);
+      }
   }
 }
 @media (max-width: 968px) {
@@ -64,6 +73,8 @@ export default {
       background-size: 100%;
       background-position: top 20% center;
       min-width: 460px;
+      position: relative;
+
     }
   }
 }
