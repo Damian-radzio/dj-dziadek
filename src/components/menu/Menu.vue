@@ -5,7 +5,7 @@
     </div>
     <nav v-if="this.width >= 768">
       <ul>
-        <li><router-link class-active="active" to="/" >Start</router-link></li>
+        <li><router-link class-active="active" to="/">Start</router-link></li>
         <li><router-link class-active="active" to="/about">O mnie</router-link></li>
         <li><router-link class-active="active" to="/gallery">Galeria</router-link></li>
         <li><router-link class-active="active" to="/reviews">Opinie</router-link></li>
@@ -115,12 +115,12 @@ export default {
       this.isMobileMenuOpen = false;
       this.scrollToTop();
     },
-    onScroll(){
+    onScroll() {
       const navBar = document.querySelector('.header-container');
-      if(window.scrollY > 50){
+      if (window.scrollY > 50) {
         navBar.classList.add('active');
-      }else{
-                navBar.classList.remove('active');
+      } else {
+        navBar.classList.remove('active');
       }
     },
   },
@@ -135,7 +135,7 @@ export default {
   margin-top: 5px;
   height: 120px;
   justify-content: space-between;
-  
+
   transform: translate3d(0, 0, 0);
   transition: 0.3s height ease-out;
 
@@ -212,8 +212,9 @@ export default {
           justify-content: flex-end;
           align-items: flex-end;
           li {
-            padding: 15px 24px;
             text-align: right;
+            padding: 20px 5px 20px 15px;
+            margin-right: 20px;
           }
           margin-bottom: 30px;
         }
@@ -233,9 +234,8 @@ export default {
     top: 125px;
   }
 }
-.active{
-    height: 100px;
-    transition: 0.4s; 
+.active {
+  transition: 0.4s;
 }
 .hiddenNavbar {
   transform: translateY(-100%);
@@ -266,6 +266,7 @@ export default {
     .mobile-menu {
       nav {
         ul {
+          min-width: auto;
           li {
             padding: 24px;
           }
