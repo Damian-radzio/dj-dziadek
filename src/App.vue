@@ -1,16 +1,18 @@
 <template>
-  <div id="menu">
-    <Menu />
-  </div>
-  <div class="children">
-    <router-view v-slot="{ Component }">
-      <transition name="route" mode="out-in">
-        <component :is="Component"></component>
-      </transition>
-    </router-view>
-  </div>
-  <div id="footer">
-    <Footer />
+  <div>
+    <div id="menu">
+      <Menu />
+    </div>
+    <div class="children">
+      <router-view v-slot="{ Component }">
+        <transition name="route" mode="out-in">
+          <component :is="Component"></component>
+        </transition>
+      </router-view>
+    </div>
+    <div id="footer">
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -61,6 +63,7 @@ export default {
 }
 body {
   position: relative;
+  margin-top: 130px;
 }
 .children {
   min-height: 80vh;

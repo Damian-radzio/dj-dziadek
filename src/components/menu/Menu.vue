@@ -135,7 +135,6 @@ export default {
   margin-top: 5px;
   height: 120px;
   justify-content: space-between;
-
   transform: translate3d(0, 0, 0);
   transition: 0.3s height ease-out;
 
@@ -168,6 +167,7 @@ export default {
 
           &.router-link-exact-active {
             font-weight: 600;
+            cursor: default;
           }
         }
       }

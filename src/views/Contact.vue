@@ -57,7 +57,6 @@ export default {
 .wrapper {
   max-width: 1640px;
   margin: 0 auto;
-  margin-top: 130px;
 }
 header {
   p {

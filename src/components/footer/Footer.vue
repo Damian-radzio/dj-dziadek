@@ -7,19 +7,19 @@
           <img src="@/assets/svg/instagram.png" />
         </a>
       </div>
-       <section class="contact">
-      <div class="contact-data-container">
-        <h2>Kontakt</h2>
-        <p><a href="tel:514-209-538">(+48) 514 209 538</a></p>
-        <p v-if="this.width >= 1024">
-          <a href="mailto:slawekdjdziadek@gmail.com">slawekdjdziadek@gmail.com</a>
-        </p>
-        <router-link to="/contact" @click="scrollToTop()">formularz kontaktowy</router-link>
-        <p v-if="this.width <= 1024">
-          <a href="mailto:slawekdjdziadek@gmail.com">slawekdjdziadek@gmail.com </a>
-        </p>
-      </div>
-    </section>
+      <section class="contact">
+        <div class="contact-data-container">
+          <h2>Kontakt</h2>
+          <p><a href="tel:514-209-538">(+48) 514 209 538</a></p>
+          <p v-if="this.width >= 1024">
+            <a href="mailto:slawekdjdziadek@gmail.com">slawekdjdziadek@gmail.com</a>
+          </p>
+          <router-link to="/contact" @click="scrollToTop()">formularz kontaktowy</router-link>
+          <p v-if="this.width <= 1024">
+            <a href="mailto:slawekdjdziadek@gmail.com">slawekdjdziadek@gmail.com </a>
+          </p>
+        </div>
+      </section>
       <div class="social-tile">
         <a href="https://www.facebook.com/Dj-wodzirej-S%C5%82awomir-Dziadek-106330881397763/">
           <h2>Facebook</h2>
@@ -27,8 +27,6 @@
         </a>
       </div>
     </section>
-
-   
   </footer>
 </template>
 
@@ -105,11 +103,11 @@ footer {
   .contact {
     display: flex;
     flex-direction: column;
-align-items: center;
-text-align: center;
+    align-items: center;
+    text-align: center;
     h2 {
       text-align: left;
-      margin-bottom:0;
+      margin-bottom: 0;
       padding: 0 0 24px 0;
     }
     .contact-data-container {
@@ -135,7 +133,7 @@ text-align: center;
     flex-direction: column;
     width: 100%;
     padding: 50px 0px 0px 0px;
-  padding-bottom: 50px;
+    padding-bottom: 50px;
     .social-container {
       flex-direction: column;
       align-items: center;
@@ -149,7 +147,7 @@ text-align: center;
         }
       }
     }
- 
+
     section {
       width: 100%;
       margin-top: 0px;

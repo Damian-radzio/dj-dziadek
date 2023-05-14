@@ -69,7 +69,6 @@ export default {
       return year - 2014;
     },
   },
-  
 };
 </script>
 
@@ -243,7 +242,7 @@ export default {
       }
       .announcers {
         align-items: center;
-        div{
+        div {
           height: 200px;
           display: flex;
           align-items: center;
@@ -274,15 +273,15 @@ export default {
 }
 
 @media (max-width: 520px) {
-    .announcers-wrapper {
-      .announcers {
-        height: auto;
-        flex-direction: column;
-        .img-wrapper {
-          margin-bottom: 75px;
-        }
+  .announcers-wrapper {
+    .announcers {
+      height: auto;
+      flex-direction: column;
+      .img-wrapper {
+        margin-bottom: 75px;
       }
     }
+  }
   .about {
     .about-general {
       .about-me-image {
